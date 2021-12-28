@@ -1,32 +1,30 @@
-# Prerequisites
-*.d
+/**
+ * @project Controle LED via WiFi with Blynk 
+ * @author  Teerapong Singthong <st.teerapong@gmail.com>
+ * @desc    medium.com/iamgoangle
+ */
+ 
+#define BLYNK_PRINT Serial
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
 
-# Precompiled Headers
-*.gch
-*.pch
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266.h>
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+// Blynk Auth Token
+char auth[TMPL226yu30g] = "xxx";
 
-# Fortran module files
-*.mod
-*.smod
+// WiFi
+char ssid[from home] = "xxx";
+char pass[nakamoto] = "xxx";
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+void setup()
+{
+  Serial.begin(9600);
 
-# Executables
-*.exe
-*.out
-*.app
+  Blynk.begin(auth, ssid, pass);
+}
+
+void loop()
+{
+  Blynk.run();
+}
